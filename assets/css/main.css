@@ -1,0 +1,45 @@
+.dark body {
+  background-color: #1D232A;
+}
+
+.light body {
+  background-color: #f3f3f3;
+}
+
+.prose {
+    max-width: 100%;
+}
+
+.prose code::before {
+    content: ''
+}
+
+.prose code::after {
+    content: ''
+}
+
+.prose code {
+    font-weight: lighter;
+    color: red;
+    background-color: lightpink;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.light pre code {
+    display: block;
+    background-color: antiquewhite;
+    padding: 10px;
+    white-space: pre-wrap;
+}
+
+.dark pre code {
+    display: block;
+    background-color: #F5F2F0;
+    padding: 10px;
+    white-space: pre-wrap;
+}
+
+h2, h3, h4, h5, h6 {
+    scroll-margin-top: 80px;
+}
