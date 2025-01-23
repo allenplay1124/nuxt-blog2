@@ -54,12 +54,57 @@
                 </ul>
             </div>
         </nav>
+
+        <div
+            v-show="isShow"
+            class="container absolute mx-auto top-30 z-50 bg-white dark:bg-gray-600 rounded-lg shadow-lg">
+            <div class="text-right m-2">
+                <button @click="toggleMenu()" class="rounded-full shadow-xl px-2 pt-1 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-700 dark:text-cyan-100">
+                    <IconClose :width="32" :height="32"  />
+                </button>
+            </div>
+            <ul class="flex flex-col items-center space-y-4 my-4">
+                <li v-for="menu in navItems" :key="menu.title" @click="closeMenu()">
+                    <nuxt-link :to="menu.link"
+                        class="text-gray-700 focus:outline-none dark:text-cyan-100 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full px-4 py-2">
+                        {{ menu.title }}
+                    </nuxt-link>
+                </li>
+            </ul>
+
+            <hr />
+
+            <div class="flex justify-center items-center gap-4 my-4">
+                <div>
+                    <button
+                        class="rounded-full shadow-xl px-2 pt-1 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-700 dark:text-cyan-100"
+                        @click="$colorMode.preference = 'system'">
+                        <IconDesktop />
+                    </button>
+                </div>
+                <div>
+                    <button
+                        class="rounded-full shadow-xl px-2 pt-1 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-700 dark:text-cyan-100"
+                        @click="$colorMode.preference = 'light'">
+                        <IconWbSunny />
+                    </button>
+                </div>
+                <div>
+                    <button
+                        class="rounded-full shadow-xl px-2 pt-1 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-700 dark:text-cyan-100"
+                        @click="$colorMode.preference = 'dark'">
+                        <IconDarkMode />
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
     import IconDesktop from '~/components/Icon/Desktop';
     import IconWbSunny from '~/components/Icon/Sun';
     import IconDarkMode from '~/components/Icon/DarkMoon';
+    import IconClose from '~/components/Icon/Close';
     export default {
         name: 'NavMenu',
 
@@ -67,6 +112,7 @@
             IconDesktop,
             IconWbSunny,
             IconDarkMode,
+            IconClose,
         },
 
         data() {
@@ -94,6 +140,10 @@
 
             toggleMenu() {
                 this.isShow = this.isShow ? false : true;
+            },
+
+            closeMenu() {
+                this.isShow = false;
             },
 
             handleScroll() {

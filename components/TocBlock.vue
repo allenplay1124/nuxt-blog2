@@ -6,20 +6,10 @@
 
         <ul class="pl-5 pb-5 pt-2">
             <li v-for="(item, index) in toc" :key="index" class="py-2 hover:text-blue-500 dark:hover:text-cyan-500">
-                <div v-if="item.depth == 1" class="flex flex-row">
-                    <div class="mt-2">
-                        <IconArrowRight :width="24" :height="24" />
-                    </div>
-                    <div>
-                        <a :href="`#${item.id}`">
-                            {{ item.text }}
-                        </a>
-                    </div>
-                </div>
 
-                <div v-if="item.depth == 2" class="flex flex-row pl-4 hover:text-blue-500 dark:hover:text-cyan-500">
-                    <div class="mt-2">
-                        <IconArrowRight :width="24" :height="24" />
+                <div v-if="item.depth == 2" class="flex flex-row pl-2 hover:text-blue-500 dark:hover:text-cyan-500">
+                    <div class="mt-1">
+                        <IconArrowRight :width="22" :height="22" />
                     </div>
                     <div>
                         <a :href="`#${item.id}`">
@@ -31,7 +21,7 @@
 
                 <div v-if="item.depth == 3" class="flex flex-row pl-8 hover:text-blue-500 dark:hover:text-cyan-500">
                     <div class="mt-1">
-                        <IconArrowRight :width="20" :height="20" />
+                        <IconArrowRight :width="16" :height="16" />
                     </div>
                     <div>
                         <a :href="`#${item.id}`">
@@ -43,7 +33,7 @@
 
                 <div v-if="item.depth == 4" class="flex flex-row pl-16 hover:text-blue-500 dark:hover:text-cyan-500">
                     <div class="mt-1">
-                        <IconArrowRight :width="16" :height="16" />
+                        <IconArrowRight :width="12" :height="12" />
                     </div>
                     <div>
                         <a :href="`#${item.id}`">
