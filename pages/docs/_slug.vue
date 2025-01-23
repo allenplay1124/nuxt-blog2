@@ -39,7 +39,6 @@ export default {
   },
 
   async asyncData({ $content, params }) {
-    console.log(params.slug);
 
     const doc = await $content("docs", params.slug).fetch();
 
