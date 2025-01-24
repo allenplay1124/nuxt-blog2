@@ -43,3 +43,12 @@
 h2, h3, h4, h5, h6 {
     scroll-margin-top: 80px;
 }
+
+
+.dark .prose a {
+    color: #3DB6D4;
+}
+
+.light .prose a {
+    color: #3B82F6;
+}
