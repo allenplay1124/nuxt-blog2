@@ -19,11 +19,12 @@
 }
 
 .prose code {
-    font-weight: lighter;
-    color: red;
-    background-color: lightpink;
-    padding: 3px;
+    color: #C7254E;
+    background-color: #F9F2F4;
+    padding: 2px;
     border-radius: 5px;
+    font-weight: 100;
+    font-family: monospace;
 }
 
 .light pre code {
@@ -31,6 +32,7 @@
     background-color: antiquewhite;
     padding: 10px;
     white-space: pre-wrap;
+    font-family: monospace;
 }
 
 .dark pre code {
@@ -38,6 +40,7 @@
     background-color: #F5F2F0;
     padding: 10px;
     white-space: pre-wrap;
+    font-family: monospace;
 }
 
 h2, h3, h4, h5, h6 {
