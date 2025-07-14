@@ -1,14 +1,20 @@
 <template>
     <div class="container mx-auto my-3 lg:p-10 p-1">
         <div class="flex flex-col md:flex-row">
-            <div class="flex-1 p-4 shadow-lg rounded-xl dark:shadow-cyan-500/50 border dark:border-cyan-100 my-6">
+            <div
+                class="flex-1 p-4 shadow-lg rounded-xl dark:shadow-cyan-500/50 border dark:border-cyan-100 my-6"
+            >
                 <div class="relative">
                     <div class="w-full md:w-auto">
-                        <img :src="cate.cover" class="w-full object-cover rounded-xl" />
+                        <img
+                            :src="cate.cover"
+                            class="w-full object-cover rounded-xl"
+                        />
                     </div>
 
                     <div
-                        class="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center bg-white bg-opacity-75 p-4">
+                        class="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center bg-white bg-opacity-75 p-4"
+                    >
                         <h1 class="text-2xl">{{ cate.title }}</h1>
                         <div>{{ cate.summary }}</div>
                     </div>
@@ -16,14 +22,21 @@
 
                 <!---文章列表--->
                 <div class="container mx-auto py-4">
-                    <div v-for="(post, index) in posts" :key="index"
-                        class="flex flex-col md:flex-row items-center mb-8 space-y-4 md:space-y-0 md:space-x-6 shadow-lg rounded-lg p-4 border">
+                    <div
+                        v-for="(post, index) in posts"
+                        :key="index"
+                        class="flex flex-col md:flex-row items-center mb-8 space-y-4 md:space-y-0 md:space-x-6 shadow-lg rounded-lg p-4 border"
+                    >
                         <nuxt-link :to="post.path">
-                            <img :src="post.image"
-                                class="w-full h-auto md:w-48 md:h-32 object-cover rounded-md shadow-lg transition duration-300 ease-in-out hover:scale-105" />
+                            <img
+                                :src="post.image"
+                                class="w-full h-auto md:w-48 md:h-32 object-cover rounded-md shadow-lg transition duration-300 ease-in-out hover:scale-105"
+                            />
                         </nuxt-link>
                         <div class="flex-1 ml-4 md:ml-0 dark:text-slate-300">
-                            <h2 class="text-2xl hover:text-blue-500 dark:hover:text-cyan-500">
+                            <h2
+                                class="text-2xl hover:text-blue-500 dark:hover:text-cyan-500"
+                            >
                                 <nuxt-link :to="post.path">
                                     {{ post.title }}
                                 </nuxt-link>
@@ -32,7 +45,10 @@
                             <div class="flex lg:flex-row flex-col">
                                 <div class="flex flex-row">
                                     <div class="mt-0.5 mr-2">
-                                        <IconCalendar :width="24" :height="24"  />
+                                        <IconCalendar
+                                            :width="24"
+                                            :height="24"
+                                        />
                                     </div>
                                     <div>
                                         {{ post.pubDate | dateFormat }}
@@ -43,7 +59,9 @@
                                     <div class="mt-0.5 mr-2">
                                         <IconFolder :width="24" :height="24" />
                                     </div>
-                                    <div class="hover:text-blue-500 dark:hover:text-cyan-500">
+                                    <div
+                                        class="hover:text-blue-500 dark:hover:text-cyan-500"
+                                    >
                                         <nuxt-link :to="post.categoryData.path">
                                             {{ post.categoryData.title }}
                                         </nuxt-link>
@@ -55,10 +73,15 @@
                                         <IconTags :width="24" :height="24" />
                                     </div>
                                     <div class="flex flex-row">
-                                        <div v-for="(tag, tagIndex) in post.tagData" :key="tagIndex"
-                                            class="mr-2 hover:text-blue-500 dark:hover:text-cyan-500">
-                                            <nuxt-link :to="tag.path">
-                                                {{ tag.title }}
+                                        <div
+                                            v-for="(
+                                                tag, tagIndex
+                                            ) in post.tagData"
+                                            :key="tagIndex"
+                                            class="mr-2 hover:text-blue-500 dark:hover:text-cyan-500"
+                                        >
+                                            <nuxt-link :to="`/tags/${tag}`">
+                                                {{ tag }}
                                             </nuxt-link>
                                         </div>
                                     </div>
@@ -69,8 +92,12 @@
                                 {{ post.summary }}
                             </div>
 
-                            <div class="text-right hover:text-blue-500 dark:hover:text-cyan-500">
-                                <nuxt-link :to="post.path"> [繼續閱讀] </nuxt-link>
+                            <div
+                                class="text-right hover:text-blue-500 dark:hover:text-cyan-500"
+                            >
+                                <nuxt-link :to="post.path">
+                                    [繼續閱讀]
+                                </nuxt-link>
                             </div>
                         </div>
                     </div>
@@ -85,88 +112,90 @@
     </div>
 </template>
 <script>
-    import IconCalendar from '~/components/Icon/Calendar'
-    import IconFolder from '~/components/Icon/Folder'
-    import IconTags from '~/components/Icon/Tags'
-    import CategoriesBlock from '~/components/CategoriesBlock'
-    import TagsBlock from '~/components/TagsBlock'
-    export default {
-        name: 'CategorySlug',
+import IconCalendar from "~/components/Icon/Calendar";
+import IconFolder from "~/components/Icon/Folder";
+import IconTags from "~/components/Icon/Tags";
+import CategoriesBlock from "~/components/CategoriesBlock";
+import TagsBlock from "~/components/TagsBlock";
+export default {
+    name: "CategorySlug",
 
-        components: {
-            IconCalendar,
-            IconFolder,
-            IconTags,
-            CategoriesBlock,
-            TagsBlock,
-        },
+    components: {
+        IconCalendar,
+        IconFolder,
+        IconTags,
+        CategoriesBlock,
+        TagsBlock,
+    },
 
-        head() {
-            return {
-                title: `文章分類：${this.cate.title} | ${this.$nuxt.context.app.head.title}`,
-                meta: [
-                    {
-                        hid: 'description',
-                        name: 'description',
-                        content: this.cate.summary,
-                    },
-                    {
-                        property: 'og:title',
-                        content: `文章分類：${this.cate.title} | ${this.$nuxt.context.app.head.title}`
-                    },
-                    {
-                        property: 'og:image',
-                        content: this.cate.cover
-                    },
-                    {
-                        property: 'og:description',
-                        content: this.cate.summary,
-                    }
-                ],
-            }
-        },
+    head() {
+        return {
+            title: `文章分類：${this.cate.title} | ${this.$nuxt.context.app.head.title}`,
+            meta: [
+                {
+                    hid: "description",
+                    name: "description",
+                    content: this.cate.summary,
+                },
+                {
+                    property: "og:title",
+                    content: `文章分類：${this.cate.title} | ${this.$nuxt.context.app.head.title}`,
+                },
+                {
+                    property: "og:image",
+                    content: this.cate.cover,
+                },
+                {
+                    property: "og:description",
+                    content: this.cate.summary,
+                },
+            ],
+        };
+    },
 
-        async asyncData({ $content, params }) {
-            const categories = await $content("categories").sortBy("sort", "asc").fetch();
+    async asyncData({ $content, params }) {
+        const categories = await $content("categories")
+            .sortBy("sort", "asc")
+            .fetch();
 
-            const tags = await $content("tags").fetch();
+        let allTags = await $content("articles").only("tags").fetch();
 
-            const cate = await $content("categories", params.slug).limit(1).fetch();
+        let tags = [];
 
-            const posts = await $content('articles')
-                .where({
-                    category: params.slug,
-                    status: true
-                })
-                .sortBy('pubDate', 'desc')
-                .fetch()
+        allTags.forEach(function (item) {
+            item.tags.forEach(function (tag) {
+                if (!tags.includes(tag)) {
+                    tags.push(tag);
+                }
+            });
+        });
 
-            posts.map(function (post) {
-                let category = categories.find(function (category) {
-                    return category.slug === post.category;
-                });
+        const cate = await $content("categories", params.slug).limit(1).fetch();
 
-                post.categoryData = category;
+        const posts = await $content("articles")
+            .where({
+                category: params.slug,
+                status: true,
+            })
+            .sortBy("pubDate", "desc")
+            .fetch();
 
-                let tagsList = [];
-
-                post.tags.forEach(function (tag) {
-                    let tagItem = tags.find(function (item) {
-                        return item.slug === tag;
-                    });
-
-                    tagsList.push(tagItem);
-                });
-
-                post.tagData = tagsList;
+        posts.map(function (post) {
+            let category = categories.find(function (category) {
+                return category.slug === post.category;
             });
 
-            return {
-                categories,
-                tags,
-                cate,
-                posts,
-            };
-        }
-    }
+            post.categoryData = category;
+
+            post.tagData = post.tags;
+        });
+
+        return {
+            categories,
+            tags,
+            cate,
+            posts,
+        };
+    },
+};
 </script>

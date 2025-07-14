@@ -51,9 +51,9 @@
 
                         <div class="flex flex-row justify-between">
                             <div v-for="(tag, tagIndex) in post.tagData" :key="tagIndex"
-                                class="text-base bg-gray-100 dark:bg-slate-600 rounded-full mr-2 p-2 shadow-md hover:text-blue-500 dark:hover:text-cyan-300">
-                                <nuxt-link :to="tag.path">
-                                    {{ tag.title }}
+                                class="text-base bg-gray-100 dark:bg-slate-600 rounded-md mr-2 px-2 py-1 shadow-md hover:text-blue-500 dark:hover:text-cyan-300">
+                                <nuxt-link :to="`/tags/${tag}`">
+                                    {{ tag }}
                                 </nuxt-link>
                             </div>
                         </div>

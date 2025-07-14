@@ -9,46 +9,51 @@
 </template>
 
 <script>
-    import Carousel from '~/components/Carousel'
-    import HomePostLists from '~/components/HomePostLists'
-    export default {
-        name: 'IndexPage',
+import Carousel from "~/components/Carousel";
+import HomePostLists from "~/components/HomePostLists";
+export default {
+    name: "IndexPage",
 
-        components: {
-            Carousel,
-            HomePostLists
-        },
+    components: {
+        Carousel,
+        HomePostLists,
+    },
 
-        async asyncData({ $content }) {
-            let categories = await $content("categories").sortBy("sort", "asc").fetch();
+    async asyncData({ $content }) {
+        let categories = await $content("categories")
+            .sortBy("sort", "asc")
+            .fetch();
 
-            let tags = await $content('tags').fetch();
+        let allTags = await $content("articles").only("tags").fetch();
 
-            let posts = await $content('articles')
-                .where({ status: true })
-                .sortBy('pubDate', 'desc')
-                .fetch()
+        let tags = [];
 
-            posts.map(function (post) {
-                let category = categories.find(function (category) {
-                    return category.slug === post.category;
-                });
-                post.categoryData = category
+        allTags.forEach(function (item) {
+            item.tags.forEach(function (tag) {
+                if (!tags.includes(tag)) {
+                    tags.push(tag);
+                }
+            });
+        });
 
-                let tagList = [];
-                post.tags.forEach(function (tag) {
-                    let tagItem = tags.find(function (item) {
-                        return item.slug === tag;
-                    });
-                    tagList.push(tagItem);
-                });
-                post.tagData = tagList;
-            })
-            return {
-                categories,
-                tags,
-                posts,
-            };
-        },
-    }
+        let posts = await $content("articles")
+            .where({ status: true })
+            .sortBy("pubDate", "desc")
+            .fetch();
+
+        posts.map(function (post) {
+            let category = categories.find(function (category) {
+                return category.slug === post.category;
+            });
+            post.categoryData = category;
+
+            post.tagData = post.tags;
+        });
+        return {
+            categories,
+            tags,
+            posts,
+        };
+    },
+};
 </script>

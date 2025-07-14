@@ -35,8 +35,8 @@
                         <div>
                             <span v-for="(tag, index) in post.tagsData" :key="index"
                                 class="mr-2 shadow-sm p-1 hover:text-blue-500 dark:hover:text-cyan-500 border-b">
-                                <nuxt-link :to="tag.path">
-                                    {{ tag.title }}
+                                <nuxt-link :to="`/tags/${tag}`">
+                                    {{ tag }}
                                 </nuxt-link>
                             </span>
                         </div>
@@ -166,20 +166,26 @@
         async asyncData({ $content, params }) {
             let categories = await $content("categories").sortBy("sort", "asc").fetch();
 
-            let tags = await $content("tags").fetch();
+            let allTags = await $content("articles").only("tags").fetch();
+
+            let tags = [];
+
+            allTags.forEach(function (item) {
+                item.tags.forEach(function (tag) {
+                    if (!tags.includes(tag)) {
+                        tags.push(tag);
+                    }
+                });
+            });
 
             let post = await $content("articles", params.slug).limit(1).fetch();
 
             const categoryData = categories.find((c) => c.slug == post.category);
 
-            const tagsData = [];
-            post.tags.forEach(function (tag) {
-                let item = tags.find((t) => t.slug === tag);
-                tagsData.push(item);
-            });
+
 
             post.categoryData = categoryData;
-            post.tagsData = tagsData;
+            post.tagsData = post.tags;
 
             const [prev, next] = await $content("articles")
                 .only(["title", "path"])

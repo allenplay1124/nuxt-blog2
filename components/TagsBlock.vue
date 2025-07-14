@@ -7,9 +7,9 @@
         <div class="pl-5 pb-5 pt-2">
             <span v-for="(tag, index) in tags"
                 :key="index"
-                class="text-gray-600 mr-2 my-2 p-2 rounded-lg shadow-md float-left hover:text-blue-700 dark:text-cyan-100 dark:hover:text-cyan-300 dark:shadow-cyan-500/50 border dark:border-cyan-100">
-                <nuxt-link :to="tag.path">
-                    {{ tag.title }}
+                class="text-gray-600 mr-2 my-2 px-2 py-1 rounded-md shadow-md float-left hover:text-blue-700 dark:text-cyan-100 dark:hover:text-cyan-300 dark:shadow-cyan-500/50 border dark:border-cyan-100">
+                <nuxt-link :to="`/tags/${tag}`">
+                    {{ tag }}
                 </nuxt-link>
             </span>
 
