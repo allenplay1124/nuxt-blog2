@@ -2,13 +2,13 @@
     <div class="container mx-auto my-3 lg:p-10 p-1">
         <div class="flex flex-col md:flex-row">
             <div
-                class="flex-1 p-4 shadow-lg rounded-xl dark:shadow-cyan-500/50 border dark:border-cyan-100 my-6"
+                class="flex-1 p-4 shadow-lg rounded-3xl bg-white/80 dark:bg-slate-800/50 dark:shadow-cyan-500/50 border dark:border-cyan-100 my-6 backdrop-blur-md"
             >
                 <div class="relative">
                     <div class="w-full md:w-auto">
                         <img
                             :src="cate.cover"
-                            class="w-full object-cover rounded-xl"
+                            class="w-full object-cover rounded-3xl"
                         />
                     </div>
 
@@ -25,7 +25,7 @@
                     <div
                         v-for="(post, index) in posts"
                         :key="index"
-                        class="flex flex-col md:flex-row items-center mb-8 space-y-4 md:space-y-0 md:space-x-6 shadow-lg rounded-lg p-4 border"
+                        class="flex flex-col md:flex-row items-center mb-8 space-y-4 md:space-y-0 md:space-x-6 shadow-lg rounded-3xl p-4 border"
                     >
                         <nuxt-link :to="post.path">
                             <img

@@ -2,7 +2,7 @@
     <div class="container mx-auto my-5">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div v-for="(post, index) in posts" :key="index"
-                class="shadow-md rounded-lg dark:bg-slate-700 dark:shadow-cyan-500/50 p-4 hover:shadow-2xl">
+                class="shadow-md rounded-lg bg-white/80 dark:bg-slate-700/50 dark:shadow-cyan-500/50 p-4 hover:shadow-2xl backdrop-blur-md">
                 <div class="w-full">
                     <nuxt-link :to="post.path">
                         <img :src="post.image"

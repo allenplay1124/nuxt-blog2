@@ -1,13 +1,13 @@
 <template>
     <div class="container mx-auto my-3 lg:p-10 p-1">
         <div class="flex flex-col md:flex-row">
-            <div class="flex-1 p-4 shadow-lg rounded-xl dark:shadow-cyan-500/50 border dark:border-cyan-100 my-6">
+            <div class="flex-1 p-4 shadow-lg rounded-3xl bg-white/80 dark:bg-slate-800/50 dark:shadow-cyan-500/50 border dark:border-cyan-100 my-6 backdrop-blur-md">
                 <h1 class="text-3xl my-3 dark:text-cyan-100">
                     {{ post.title }}
                 </h1>
 
                 <div
-                    class="w-full dark:text-gray-100 my-5 bg-slate-200 dark:bg-slate-700 p-5 flex flex-col items-start">
+                    class="w-full rounded-3xl dark:text-gray-100 my-5 bg-slate-200 dark:bg-slate-700 p-5 flex flex-col items-start">
                     <div class="text-lg inline-flex items-center mx-2">
                         <div class="mr-2">
                             <IconCalendar :width="24" :height="24" />
@@ -47,7 +47,7 @@
                     <img :src="post.image" :alt="post.title" class="w-full object-cover rounded-3xl my-2" />
                 </div>
 
-                <div class="my-4 bg-slate-200 dark:bg-slate-700 dark:text-slate-200 p-4 rounded-lg">
+                <div class="my-4 bg-slate-200 dark:bg-slate-700 dark:text-slate-200 p-4 rounded-3xl">
                     <div class="border-b border-slate-400 text-xl pb-2 font-blod">
                         文章摘要
                     </div>

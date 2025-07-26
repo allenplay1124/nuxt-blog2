@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white dark:text-slate-100 dark:bg-slate-700 dark:shadow-cyan-500/50  rounded-lg shadow-lg w-full">
+    <div class="bg-white/80 dark:text-slate-100 dark:bg-slate-800/50 dark:shadow-cyan-500/50  rounded-lg shadow-lg w-full backdrop-blur-md">
         <div class="text-2xl mb-2 border-l-8 pl-2 py-2 border-collapse border-blue-500 dark:border-cyan-500">
             分類
         </div>

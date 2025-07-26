@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto my-3 lg:p-10 p-1">
-    <div class="bg-white dark:bg-slate-700 border shadow-lg rounded-lg  dark:shadow-cyan-500/50 dark:border-cyan-100 p-4">
+    <div class="bg-white/80 dark:bg-slate-800/50 border shadow-lg rounded-3xl  dark:shadow-cyan-500/50 dark:border-cyan-100 p-4 backdrop-blur-md">
       <h1 class="text-2xl border-b pb-2 dark:text-slate-100">
         {{ doc.title }}
       </h1>
