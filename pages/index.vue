@@ -7,13 +7,13 @@
         </div>
 
         <div class="flex justify-center my-8 bg-white/50 dark:bg-slate-800/30  rounded-md py-2 shadow-xl dark:shadow-cyan-500/50 backdrop-blur-md">
-            <div class="w-10 h-10 flex items-center justify-center rounded-full transition bg-white/50">
+            <div class="w-10 h-10 flex items-center justify-center rounded-full transition bg-slate-200/50 dark:bg-slate-700/50 text-slate-800 dark:text-white backdrop-blur-md mx-3">
                 {{ page }}
             </div>
             <nuxt-link
                 v-if="total > page_limit"
                 :to="`/page/${page + 1}`"
-                class="w-10  text-slate-800 dark:text-cyan-50 hover:bg-slate-200/50 dark:hover:bg-slate-700/50 rounded-md mt-3"
+                class="w-20 h-10 flex items-center justify-center text-slate-800 dark:text-cyan-50 hover:bg-slate-200/50 dark:hover:bg-slate-500/50 rounded-md"
             >
                 下一頁 ➡️
             </nuxt-link>
