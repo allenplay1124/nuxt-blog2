@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="header">
         <nav ref="navbar"
             class="container bg-white/30 border dark:bg-gray-600/30 dark:text-gray-200 dark:shadow-cyan-500/50 shadow-lg p-4 relative transition-all duration-300 mx-auto my-8 rounded-full z-50 backdrop-blur-md">
             <div class="container mx-auto flex justify-between items-center">
@@ -153,10 +153,10 @@
                         "relative",
                         "container",
                         "mx-auto",
-                        "my-8",
                         "rounded-full",
                         "shadow-gray-500/50"
                     );
+                    document.getElementById('header').classList.add("py-8");
                     //捲軸往下滾動時
                     if (window.scrollY > 0) {
                         navbar.classList.add("fixed", "top-0", "shadow-lg", "w-full");
@@ -167,6 +167,7 @@
                             "my-8",
                             "rounded-full"
                         );
+                        document.getElementById('header').classList.remove("py-8");
                     }
                 }
             },

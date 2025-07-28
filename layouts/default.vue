@@ -1,6 +1,6 @@
 <template>
-    <div class="w-full h-full bg-cover bg-fixed" :style="baclgroundImage">
-        <header>
+    <div class="w-full h-full bg-cover bg-fixed m-0" :style="baclgroundImage">
+        <header class="m-0 p-0">
             <NavMenu />
         </header>
         <main>

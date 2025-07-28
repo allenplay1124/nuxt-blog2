@@ -2,39 +2,49 @@
     <div class="container mx-auto">
         <Carousel :categories="categories" />
 
-        <div class="clearfix">
+        <div>
             <HomePostLists :posts="posts" />
         </div>
 
-        <div class="flex justify-center my-8 bg-white/50 dark:bg-slate-800/30  rounded-md py-2 shadow-xl dark:shadow-cyan-500/50 backdrop-blur-md">
-            <div class="w-10 h-10 flex items-center justify-center rounded-full transition bg-white/50">
+        <div
+            class="flex justify-center my-8 bg-white/50 dark:bg-slate-800/30 rounded-md py-2 shadow-xl dark:shadow-cyan-500/50 backdrop-blur-md"
+        >
+            
+            <nuxt-link
+                v-if="page != 1"
+                :to="`/page/${page - 1}`"
+                class="w-20 h-10 flex items-center justify-center text-slate-800 dark:text-cyan-50 hover:bg-slate-200/50 dark:hover:bg-slate-500/50 rounded-md"
+            >
+                ⬅️ 上一頁
+            </nuxt-link>
+
+            <div class="w-10 h-10 flex items-center justify-center rounded-full transition bg-slate-200/50 dark:bg-slate-700/50 text-slate-800 dark:text-white backdrop-blur-md mx-3">
                 {{ page }}
             </div>
+            
             <nuxt-link
-                v-if="total > page_limit"
+                v-if="page < totalPages"
                 :to="`/page/${page + 1}`"
-                class="w-10  text-slate-800 dark:text-cyan-50 hover:bg-slate-200/50 dark:hover:bg-slate-700/50 rounded-md mt-3"
+                class="w-20 h-10 flex items-center justify-center text-slate-800 dark:text-cyan-50 hover:bg-slate-200/50 dark:hover:bg-slate-500/50 rounded-md"
             >
                 下一頁 ➡️
             </nuxt-link>
         </div>
     </div>
 </template>
-
 <script>
 import Carousel from "~/components/Carousel";
 import HomePostLists from "~/components/HomePostLists";
 export default {
-    name: "IndexPage",
+    name: "Page",
 
     components: {
         Carousel,
         HomePostLists,
     },
 
-   
-    async asyncData({ $content }) {
-        let page = 1;
+    async asyncData({ $content, params }) {
+        let page = parseInt(params.slug) || 1;
         let page_limit = 8;
 
         let categories = await $content("categories")
@@ -57,7 +67,7 @@ export default {
             .where({ status: true })
             .sortBy("pubDate", "desc")
             .fetch();
-        
+
         let total = await allposts.length;
 
         let totalPages = Math.ceil(total / page_limit);
@@ -68,8 +78,7 @@ export default {
             .skip((page - 1) * page_limit)
             .limit(page_limit)
             .fetch();
-        
-        
+
         posts.map(function (post) {
             let category = categories.find(function (category) {
                 return category.slug === post.category;
@@ -85,7 +94,7 @@ export default {
             page,
             page_limit,
             total,
-            totalPages
+            totalPages,
         };
     },
 };
