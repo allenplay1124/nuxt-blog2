@@ -1,7 +1,7 @@
 <template>
-    <div id="header">
+    <div id="header" class="py-8">
         <nav ref="navbar"
-            class="container bg-white/30 border dark:bg-gray-600/30 dark:text-gray-200 dark:shadow-cyan-500/50 shadow-lg p-4 relative transition-all duration-300 mx-auto my-8 rounded-full z-50 backdrop-blur-md">
+            class="container bg-white/30 border dark:bg-gray-600/30 dark:text-gray-200 dark:shadow-cyan-500/50 shadow-lg p-4 relative transition-all duration-300 mx-auto rounded-full z-50 backdrop-blur-md">
             <div class="container mx-auto flex justify-between items-center">
                 <h1 class="text-xl font-bold flex flex-row">
                     <div class="mt-1 mx-2 text-gray-700 dark:text-cyan-100">
