@@ -6,7 +6,7 @@ status: true
 pubDate: 2025-01-20 15:25:00
 category: database
 tags:
-    - postgresql
+    - Postgresql
 ---
 
 ## PostgreSQL VIEW (檢視表) 和 Materialized View (實體化檢視表)

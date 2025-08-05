@@ -6,7 +6,7 @@ pubDate: 2025-03-17 14:38:00
 status: true
 category: ai
 tags:
-    - ai
+    - AI
 ---
 
 ## 簡介

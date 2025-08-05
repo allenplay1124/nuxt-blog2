@@ -1,4 +1,0 @@
----
-title: MacOS
-slug: macos
----

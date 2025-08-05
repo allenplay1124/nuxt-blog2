@@ -7,7 +7,7 @@ status: true
 category: dev_ops
 tags: 
     - dev_ops
-    - linux
+    - Linux
 ---
 
 ## 什麼是 `nohup`？

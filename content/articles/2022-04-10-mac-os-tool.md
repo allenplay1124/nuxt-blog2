@@ -6,7 +6,7 @@ status: true
 pubDate: 2022-04-10 12:00:00
 category: software
 tags:
-  - macos
+  - MacOS
   - software
 ---
 ## HomeBrew

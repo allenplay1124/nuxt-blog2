@@ -6,7 +6,7 @@ pubDate: 2025-07-12 20:38:00
 status: true
 category: ai
 tags:
-    - ai
+    - AI
 ---
 
 # Gemini CLI 教學：將 Gemini 的強大 AI 能力帶入你的終端機

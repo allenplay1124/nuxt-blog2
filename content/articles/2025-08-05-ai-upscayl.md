@@ -6,8 +6,9 @@ pubDate: 2025-08-05 20:38:00
 status: true
 category: ai
 tags:
-    - ai
-    - image-processing
+    - AI
+    - 圖片處理
+    - software
 ---
 
 ## 什麼是 Upscayl？

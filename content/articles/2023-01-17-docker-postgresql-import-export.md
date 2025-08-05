@@ -6,8 +6,8 @@ status: true
 pubDate: 2023-01-17 11:12:00
 category: database
 tags:
-    - postgresql
-    - docker
+    - PostgreSQL
+    - Docker
 ---
 我們可以用 [Adminer](https://hub.docker.com/_/adminer) 這個資料庫管理工具，來進行匯入匯出，但檔案太大時，用 Adminer 就會顯得力不從心，而我們另外一個選擇，就是透過指令匯入匯出 SQL 檔。
 

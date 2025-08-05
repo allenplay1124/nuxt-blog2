@@ -161,7 +161,7 @@ export default {
         let allTags = await $content("articles").only("tags").fetch();
 
         let tags = [];
-
+        //取得所有文章的tags
         allTags.forEach(function (item) {
             item.tags.forEach(function (tag) {
                 if (!tags.includes(tag)) {
@@ -169,6 +169,20 @@ export default {
                 }
             });
         });
+        //計算每個tag的數量
+        const tagCounts = {};
+        allTags.forEach((item) => {
+            item.tags.forEach((tag) => {
+                tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+            });
+        });
+        tags = tags.map((tag) => ({
+            name: tag,
+            count: tagCounts[tag] || 0,
+        }));
+
+        //排序tags
+        tags.sort((a, b) => b.count - a.count);
 
         const cate = await $content("categories", params.slug).limit(1).fetch();
 
