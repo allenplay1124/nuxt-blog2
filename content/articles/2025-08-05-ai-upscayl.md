@@ -30,15 +30,15 @@ https://upscayl.github.io/
 
 ## 操作介紹
 
-![操作介面](/images/articles/2025-08-05-ai-upscayl/upscayl-01.png)
+![操作介面](/images/articles/2025-08-05-ai-upscayl/Upscayl-01.png)
 
 1. **選擇批次處理**：可選擇單張圖片放大，或批次放大
 2. **選舉圖片**：若單張放大時，則選擇圖片，若選擇批次放大，則選擇目錄
-3. **選擇放大模型**：可以依自已需求，選擇放大模型 ![選擇放大模型](/images/articles/2025-08-05-ai-upscayl/upscayl-02.png)
+3. **選擇放大模型**：可以依自已需求，選擇放大模型 ![選擇放大模型](/images/articles/2025-08-05-ai-upscayl/Upscayl-02.png)
 4. **雙次放大**：進行兩次放大
 5. **放大比例**：可選擇放大倍率
 6. **選擇輸出位置**：可選擇輸出目錄
-7. **開始處理**：開始放大 ![放大後可瀏覽結果](/images/articles/2025-08-05-ai-upscayl/upscayl-03.png)
+7. **開始處理**：開始放大 ![放大後可瀏覽結果](/images/articles/2025-08-05-ai-upscayl/Upscayl-03.png)
 
 ## 使用情境
 
