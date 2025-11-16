@@ -119,6 +119,14 @@
                 <TagsBlock :tags="tags" class="my-4" />
             </div>
         </div>
+
+        <div id="show-box">
+            <div class="close shadow-3xl">X</div>
+            <div class="flex justify-center items-center">
+                <img src="#" id="show-img" class="w-full"></img>
+                <div id="title"></div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -231,5 +239,72 @@ export default {
 
         return { post, categories, tags, prev, next };
     },
+
+    mounted() {
+        $(document).ready(() => {
+             $("#show-box").hide();
+        });
+        
+        $("#show-box .close").click(() => {
+            $("#show-box").fadeToggle('slow');
+        });
+
+        $("img").click(function () {
+            const imgSrc = $(this).attr("src");
+            $("#show-img").attr("src", imgSrc);
+            $("#show-box").fadeToggle('slow');
+        });
+    },
 };
 </script>
+
+<style scoped>
+#show-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #666;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    z-index: 10000;
+    border: 2px solid #FFF;
+}
+
+.img-box {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.img-box:hover {
+    transform: scale(1.05);
+}
+
+#show-img {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+</style>

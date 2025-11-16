@@ -30,7 +30,7 @@ export default {
             {
                 async: true,
                 src: 'https://www.googletagmanager.com/gtag/js?id=G-F1RJPWRTPS'
-            }
+            },
         ]
     },
 
@@ -57,6 +57,8 @@ export default {
     plugins: [
         { src:  '~/plugins/carousel.js', ssr: false },
         { src:  '~/plugins/disqus.js', ssr: false },
+        { src:  '~/plugins/lightbox.js', ssr: false },
+        { src: '~/plugins/jquery.js', mode: 'client' } 
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
