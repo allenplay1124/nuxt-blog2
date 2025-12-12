@@ -1,25 +1,34 @@
 <template>
     <div class="container mx-auto my-5">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div v-for="(post, index) in posts" :key="index"
-                class="shadow-md rounded-lg bg-white/80 dark:bg-slate-700/50 dark:shadow-cyan-500/50 p-4 hover:shadow-2xl backdrop-blur-md">
+            <div
+                v-for="(post, index) in posts"
+                :key="index"
+                class="shadow-md rounded-lg bg-white/80 dark:bg-slate-700/50 dark:shadow-cyan-500/50 p-4 hover:shadow-2xl backdrop-blur-md"
+            >
                 <div class="w-full">
                     <nuxt-link :to="post.path">
-                        <img :src="post.image"
+                        <img
+                            :src="post.image"
                             class="rounded-lg hover:scale-105 hover:shadow-lg transition-transform duration-200 ease-in-out"
-                            :alt="post.title" />
+                            :alt="post.title"
+                        />
                     </nuxt-link>
                 </div>
 
                 <div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white border-b py-2 hover:text-blue-500">
+                    <h3
+                        class="text-xl font-bold text-gray-900 dark:text-white border-b py-2 hover:text-blue-500 tracking-wider leading-relaxed"
+                    >
                         <nuxt-link :to="post.path">
                             {{ post.title }}
                         </nuxt-link>
                     </h3>
 
                     <div class="py-2 flex flex-row">
-                        <div class="text-gray-600 dark:text-white text-lg flex flex-row mr-2">
+                        <div
+                            class="text-gray-600 dark:text-white text-lg flex flex-row mr-2"
+                        >
                             <div class="mr-2">
                                 <IconCalendar :width="24" :height="24" />
                             </div>
@@ -28,7 +37,9 @@
                             </div>
                         </div>
 
-                        <div class="text-gray-600 dark:text-white text-lg flex flex-row">
+                        <div
+                            class="text-gray-600 dark:text-white text-lg flex flex-row"
+                        >
                             <div class="mr-2">
                                 <IconFolder :width="24" :height="24" />
                             </div>
@@ -40,7 +51,9 @@
                         </div>
                     </div>
 
-                    <div class="text-gray-600 dark:text-white pt-2 text-justify text-base">
+                    <div
+                        class="text-gray-600 dark:text-white pt-2 text-justify text-base font-normal leading-relaxed tracking-wide"
+                    >
                         {{ post.summary }}
                     </div>
 
@@ -50,8 +63,11 @@
                         </div>
 
                         <div class="flex flex-row justify-between">
-                            <div v-for="(tag, tagIndex) in post.tagData" :key="tagIndex"
-                                class="text-base bg-gray-100 dark:bg-slate-600 rounded-md mr-2 px-2 py-1 shadow-md hover:text-blue-500 dark:hover:text-cyan-300">
+                            <div
+                                v-for="(tag, tagIndex) in post.tagData"
+                                :key="tagIndex"
+                                class="text-base bg-gray-100 dark:bg-slate-600 rounded-md mr-2 px-2 py-1 shadow-md hover:text-blue-500 dark:hover:text-cyan-300"
+                            >
                                 <nuxt-link :to="`/tags/${tag}`">
                                     {{ tag }}
                                 </nuxt-link>
@@ -65,34 +81,34 @@
 </template>
 
 <script>
-    import IconCalendar from '~/components/Icon/Calendar'
-    import IconFolder from '~/components/Icon/Folder'
-    import IconTags from '~/components/Icon/Tags'
-    export default {
-        name: 'HomePostLists',
+import IconCalendar from "~/components/Icon/Calendar";
+import IconFolder from "~/components/Icon/Folder";
+import IconTags from "~/components/Icon/Tags";
+export default {
+    name: "HomePostLists",
 
-        components: {
-            IconCalendar,
-            IconFolder,
-            IconTags,
+    components: {
+        IconCalendar,
+        IconFolder,
+        IconTags,
+    },
+
+    props: {
+        posts: {
+            type: Array,
+            required: true,
         },
+    },
 
-        props: {
-            posts: {
-                type: Array,
-                required: true,
-            },
+    filters: {
+        dateFormat: function (date) {
+            const dateObj = new Date(date);
+            const year = dateObj.getFullYear();
+            const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+            const day = String(dateObj.getDate()).padStart(2, "0");
+
+            return `${year}-${month}-${day}`;
         },
-
-        filters: {
-            dateFormat: function (date) {
-                const dateObj = new Date(date);
-                const year = dateObj.getFullYear();
-                const month = String(dateObj.getMonth() + 1).padStart(2, "0");
-                const day = String(dateObj.getDate()).padStart(2, "0");
-
-                return `${year}-${month}-${day}`;
-            },
-        },
-    }
+    },
+};
 </script>

@@ -4,7 +4,7 @@
             <div
                 class="flex-1 p-4 shadow-lg rounded-3xl bg-white/80 dark:bg-slate-800/50 dark:shadow-cyan-500/50 border dark:border-cyan-100 my-6 backdrop-blur-md"
             >
-                <h1 class="text-3xl my-3 dark:text-cyan-100">
+                <h1 class="text-3xl my-3 dark:text-cyan-100 tracking-wider leading-relaxed">
                     {{ post.title }}
                 </h1>
 
@@ -67,7 +67,7 @@
                     >
                         文章摘要
                     </div>
-                    <div class="py-2 text-base">
+                    <div class="py-2 text-lg leading-relaxed tracking-wide text-justify">
                         {{ post.summary }}
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                 </div>
 
                 <div
-                    class="prose prose-gray prose-base w-full dark:prose-invert"
+                    class="prose prose-gray prose-lg w-full text-justify dark:prose-invert prose-p:leading-relaxed prose-p:tracking-wide prose-h1:tracking-wider prose-h2:tracking-wider prose-h3:tracking-wider prose-h4:tracking-wider prose-h5:tracking-wider prose-h6:tracking-wider"
                 >
                     <nuxt-content :document="post" />
                 </div>
