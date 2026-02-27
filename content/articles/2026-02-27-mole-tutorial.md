@@ -6,8 +6,9 @@ pubDate: 2026-02-27 14:15:00
 status: true
 category: software
 tags:
-    - macos
-    - open-source
+    - MacOS
+    - 系統優化
+    - 開源
 ---
 
 ## 什麼是 Mole？

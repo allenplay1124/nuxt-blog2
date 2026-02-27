@@ -9,6 +9,7 @@ tags:
     - AI
     - 圖片處理
     - software
+    - 開源
 ---
 
 ## 什麼是 Upscayl？
