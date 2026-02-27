@@ -7,6 +7,8 @@ status: true
 category: ai
 tags:
     - AI
+    - 開發工具
+    - 開源
 ---
 
 # Gemini CLI 教學：將 Gemini 的強大 AI 能力帶入你的終端機
