@@ -62,12 +62,9 @@
                             <IconTags :width="24" :height="24" />
                         </div>
 
-                        <div class="flex flex-row justify-between">
-                            <div
-                                v-for="(tag, tagIndex) in post.tagData"
-                                :key="tagIndex"
-                                class="text-base bg-gray-100 dark:bg-slate-600 rounded-md mr-2 px-2 py-1 shadow-md hover:text-blue-500 dark:hover:text-cyan-300"
-                            >
+                        <div class="">
+                            <div v-for="(tag, tagIndex) in post.tagData" :key="tagIndex"
+                                class="float-left text-base bg-gray-100 dark:bg-slate-600 rounded-md mr-2 my-1 px-2 py-1 shadow-md hover:text-blue-500 dark:hover:text-cyan-300">
                                 <nuxt-link :to="`/tags/${tag}`">
                                     {{ tag }}
                                 </nuxt-link>

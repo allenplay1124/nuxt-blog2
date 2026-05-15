@@ -244,7 +244,7 @@ export default {
         $(document).ready(() => {
              $("#show-box").hide();
         });
-        
+
         $("#show-box .close").click(() => {
             $("#show-box").fadeToggle('slow');
         });

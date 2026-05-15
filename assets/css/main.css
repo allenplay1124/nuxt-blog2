@@ -1,26 +1,42 @@
 .dark body {
-  background-color: #1D232A;
+    background-color: #1d232a;
 }
 
 .light body {
-  background-color: #f3f3f3;
+    background-color: #f3f3f3;
 }
 
 .prose {
     max-width: 100%;
 }
 
+.prose img {
+    display: block;
+    margin: 2rem auto;
+    max-width: 100%;
+    background-color: #ffffff;
+    padding: 1rem 1rem 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+    transition: transform 0.2s ease;
+}
+
+.prose img:hover {
+    transform: translateY(-2px);
+}
+
 .prose code::before {
-    content: ''
+    content: "";
 }
 
 .prose code::after {
-    content: ''
+    content: "";
 }
 
 .prose code {
-    color: #C7254E;
-    background-color: #F9F2F4;
+    color: #c7254e;
+    background-color: #f9f2f4;
     padding: 2px;
     border-radius: 5px;
     font-weight: 100;
@@ -37,21 +53,24 @@
 
 .dark pre code {
     display: block;
-    background-color: #F5F2F0;
+    background-color: #f5f2f0;
     padding: 10px;
     white-space: pre-wrap;
     font-family: monospace;
 }
 
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
     scroll-margin-top: 80px;
 }
 
-
 .dark .prose a {
-    color: #3DB6D4;
+    color: #3db6d4;
 }
 
 .light .prose a {
-    color: #3B82F6;
+    color: #3b82f6;
 }
