@@ -42,7 +42,7 @@
                                 </nuxt-link>
                             </h2>
 
-                            <div class="flex lg:flex-row flex-col">
+                            <div class="flex lg:flex-row flex-col mb-2">
                                 <div class="flex flex-row">
                                     <div class="mt-0.5 mr-2">
                                         <IconCalendar
@@ -50,7 +50,7 @@
                                             :height="24"
                                         />
                                     </div>
-                                    <div>
+                                    <div class="text-sm">
                                         {{ post.pubDate | dateFormat }}
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                         <IconFolder :width="24" :height="24" />
                                     </div>
                                     <div
-                                        class="hover:text-blue-500 dark:hover:text-cyan-500"
+                                        class="text-sm hover:text-blue-500 dark:hover:text-cyan-500"
                                     >
                                         <nuxt-link :to="post.categoryData.path">
                                             {{ post.categoryData.title }}
@@ -78,7 +78,7 @@
                                                 tag, tagIndex
                                             ) in post.tagData"
                                             :key="tagIndex"
-                                            class="mr-2 hover:text-blue-500 dark:hover:text-cyan-500"
+                                            class="text-sm mr-2 hover:text-blue-500 dark:hover:text-cyan-500"
                                         >
                                             <nuxt-link :to="`/tags/${tag}`">
                                                 {{ tag }}
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
 
-                            <div class="text-base text-justify">
+                            <div class="text-sm text-justify">
                                 {{ post.summary }}
                             </div>
 
@@ -210,6 +210,16 @@ export default {
             cate,
             posts,
         };
+    },
+    filters: {
+        dateFormat: function (date) {
+            const dateObj = new Date(date);
+            const year = dateObj.getFullYear();
+            const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+            const day = String(dateObj.getDate()).padStart(2, "0");
+
+            return `${year}-${month}-${day}`;
+        },
     },
 };
 </script>
