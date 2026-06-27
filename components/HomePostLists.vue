@@ -27,7 +27,7 @@
 
                     <div class="py-2 flex flex-row">
                         <div
-                            class="text-gray-600 dark:text-white text-lg flex flex-row mr-2"
+                            class="text-gray-600 dark:text-white text-sm flex flex-row mr-2"
                         >
                             <div class="mr-2">
                                 <IconCalendar :width="24" :height="24" />
@@ -38,7 +38,7 @@
                         </div>
 
                         <div
-                            class="text-gray-600 dark:text-white text-lg flex flex-row"
+                            class="text-gray-600 dark:text-white text-sm flex flex-row"
                         >
                             <div class="mr-2">
                                 <IconFolder :width="24" :height="24" />
@@ -52,7 +52,7 @@
                     </div>
 
                     <div
-                        class="text-gray-600 dark:text-white pt-2 text-justify text-base font-normal leading-relaxed tracking-wide"
+                        class="text-gray-600 dark:text-white pt-2 text-justify text-sm font-normal leading-relaxed tracking-wide"
                     >
                         {{ post.summary }}
                     </div>
@@ -64,7 +64,7 @@
 
                         <div class="">
                             <div v-for="(tag, tagIndex) in post.tagData" :key="tagIndex"
-                                class="float-left text-base bg-gray-100 dark:bg-slate-600 rounded-md mr-2 my-1 px-2 py-1 shadow-md hover:text-blue-500 dark:hover:text-cyan-300">
+                                class="float-left text-sm bg-gray-100 dark:bg-slate-600 rounded-md mr-2 my-1 px-2 py-1 shadow-md hover:text-blue-500 dark:hover:text-cyan-300">
                                 <nuxt-link :to="`/tags/${tag}`">
                                     {{ tag }}
                                 </nuxt-link>
