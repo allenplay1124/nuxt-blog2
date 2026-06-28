@@ -10,7 +10,7 @@
         <div class="pl-5 pb-5 pt-2 transition-all duration-300" v-show="isOpen">
             <span v-for="(tag, index) in tags"
                 :key="index"
-                class="text-gray-600 mr-2 my-2 px-2 py-1 rounded-md shadow-md float-left hover:text-blue-700 dark:text-cyan-100 dark:hover:text-cyan-300 dark:shadow-cyan-500/50 border dark:border-cyan-100">
+                class="text-gray-600 mr-2 my-2 px-2 py-1 rounded-md shadow-md float-left hover:text-blue-700 dark:text-cyan-100 dark:hover:text-cyan-300 dark:shadow-cyan-500/50 border dark:border-cyan-100 text-sm">
                 <nuxt-link :to="`/tags/${tag.name}`">
                     {{ tag.name }} ({{ tag.count }})
                 </nuxt-link>
