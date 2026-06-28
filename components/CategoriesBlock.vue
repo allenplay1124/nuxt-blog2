@@ -8,7 +8,7 @@
         </div>
 
         <ul class="pl-5 pb-5 pt-2 transition-all duration-300" v-show="isOpen">
-            <li v-for="(cate, index) in categories" :key="index" class="hover:text-blue-500 dark:hover:text-cyan-500 py-1">
+            <li v-for="(cate, index) in categories" :key="index" class="hover:text-blue-500 dark:hover:text-cyan-500 py-1 text-sm">
                 <nuxt-link :to="cate.path">
                     {{ cate.title }}
                 </nuxt-link>
