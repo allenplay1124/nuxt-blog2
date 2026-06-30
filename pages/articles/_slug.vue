@@ -1,5 +1,6 @@
 <template>
     <div class="container mx-auto my-3 lg:p-10 p-1">
+        <TocBlock :toc="post.toc" />
         <div class="flex flex-col md:flex-row">
             <div
                 class="flex-1 p-4 shadow-lg rounded-3xl bg-white/80 dark:bg-slate-800/50 dark:shadow-cyan-500/50 border dark:border-cyan-100 my-6 backdrop-blur-md"
@@ -72,10 +73,6 @@
                     </div>
                 </div>
 
-                <div class="md:hidden block">
-                    <tocBlock :toc="post.toc" />
-                </div>
-
                 <div
                     class="prose prose-gray prose-base w-full dark:prose-invert"
                 >
@@ -112,8 +109,6 @@
             </div>
 
             <div class="w-full md:w-1/4 p-4 md:h-full lg:sticky lg:top-20">
-                <TocBlock :toc="post.toc" class="mb-4 hidden lg:block" />
-
                 <CategoriesBlock :categories="categories" class="my-4" />
 
                 <TagsBlock :tags="tags" class="my-4" />
